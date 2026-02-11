@@ -4,14 +4,22 @@ namespace FuncionarioAPI.Models
 {
     public class Funcionario
     {
-        [Key] // Isso define que o ID será a Chave Primária automática
+        [Key]
         public int Id { get; set; }
 
-        [Required] // Define que o campo é obrigatório no banco
+        [Required(ErrorMessage = "O nome é obrigatório.")]
         public string Nome { get; set; } = string.Empty;
 
-        public string Cargo { get; set; } = string.Empty;
+        [Required(ErrorMessage = "A idade é obrigatória.")]
+        public int Idade { get; set; }
 
-        public decimal Salario { get; set; }
+        [Required(ErrorMessage = "O país é obrigatório.")]
+        public string Pais { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "O trabalho é obrigatório.")]
+        public string Trabalho { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "O salário é obrigatório.")]
+        public decimal SalarioAnual { get; set; }
     }
 }
