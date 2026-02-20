@@ -5,7 +5,7 @@
 namespace FuncionarioAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class CriarBancoSQLite : Migration
+    public partial class MigracaoSQLServer : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,11 +14,13 @@ namespace FuncionarioAPI.Migrations
                 name: "Funcionarios",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: false),
-                    Cargo = table.Column<string>(type: "TEXT", nullable: false),
-                    Salario = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Idade = table.Column<int>(type: "int", nullable: false),
+                    Pais = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Trabalho = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SalarioAnual = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

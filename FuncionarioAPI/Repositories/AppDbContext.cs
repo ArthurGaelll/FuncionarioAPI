@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore; // Traz o motor que entende de bancos de dados.
 using FuncionarioAPI.Models;       // Permite que o código use a sua classe 'Funcionario'.
 
+
 namespace FuncionarioAPI.Data
 {
     // O 'DbContext' é a ponte principal. 
@@ -18,4 +19,5 @@ namespace FuncionarioAPI.Data
         // baseada no modelo que defini na classe 'Funcionario'".
         public DbSet<Funcionario> Funcionarios { get; set; }
     }
+
 }

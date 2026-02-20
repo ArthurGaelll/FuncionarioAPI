@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace FuncionarioAPI.Models
 {
@@ -20,6 +22,7 @@ namespace FuncionarioAPI.Models
         public string Trabalho { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "O salário é obrigatório.")]
+        [Column(TypeName = "decimal(18,2)")] // Adicione esta linha
         public decimal SalarioAnual { get; set; }
     }
 }
